@@ -126,7 +126,7 @@ class VerificationPage extends Component {
                 <Route exact path="/failedVerification" render={() => (<BrowserRouter>
                     <div>
                         <h6 className="welcomeTxt">verification failed</h6>
-                        <a href={"http://localhost:3000"}>Click here to navigate back</a>
+                        <a href={"https://janhudesai-ape.herokuapp.com"}>Click here to navigate back</a>
                     </div>
                 </BrowserRouter>
             )}/>
