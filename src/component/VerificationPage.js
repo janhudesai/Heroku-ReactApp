@@ -72,7 +72,7 @@ class VerificationPage extends Component {
             var currentComponet=this;
             axios({
                 method: 'post',
-                url: 'http://localhost:8080/verificationCheck',
+                url: 'http://surveyape.us-west-1.elasticbeanstalk.com/verificationCheck',
                 data: bodyFormData,
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
             })

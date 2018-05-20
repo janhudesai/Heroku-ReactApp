@@ -41,7 +41,7 @@ class Login extends Component {
     handleLogin = () => {
         {
             var bodyFormData = new FormData();
-            localStorage.setItem("email", document.getElementById("loginUsername").value);
+            // localStorage.setItem("email", document.getElementById("loginUsername").value);
             bodyFormData.set('email', document.getElementById("loginUsername").value);
             bodyFormData.set('password', document.getElementById("loginPassword").value);
             var isValidEmail=true;
@@ -59,7 +59,7 @@ class Login extends Component {
                 if(isValidEmail==true) {
                     axios({
                         method: 'post',
-                        url: 'http://localhost:8080/login',
+                        url: 'http://surveyape.us-west-1.elasticbeanstalk.com/login',
                         data: bodyFormData,
                         config: {headers: {'Content-Type': 'application/json'}}
                     })
@@ -67,6 +67,7 @@ class Login extends Component {
                             //handle success
                             debugger;
                             if (response.status == 200) {
+                                localStorage.setItem("email", document.getElementById("loginUsername").value);
                                 if (response.data.isVerified == "N") {
                                     currentComponet.props.history.push("/verificationpage");
                                 }
